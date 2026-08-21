@@ -12,9 +12,11 @@ class ContaBancaria():
         self.saldo -= debito
         return self.saldo 
     
+    # método permite comparar objetos pelo número da conta
     def __eq__(self, objeto):
         return self.numeroConta == objeto.objnumeroConta
-    
+
+    # método permite printar objetos
     def __str__(self,):
         return f'Conta{self.numeroConta}\nTitular: {self.titular}\nSalado: {self.saldo}'
     
