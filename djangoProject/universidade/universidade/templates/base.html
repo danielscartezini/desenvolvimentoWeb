@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Projeto{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen font-sans">
+
+    <!-- Header / Navbar -->
+    <header class="bg-indigo-600 text-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-graduation-cap text-2xl text-indigo-200"></i>
+                <a href="{% url 'index' %}" class="font-bold text-xl tracking-tight hover:text-indigo-200 transition">
+                    Universidade
+                </a>
+            </div>
+            <div class="flex space-x-6 font-medium">
+                <a href="{% url 'index' %}" class="hover:text-indigo-200 transition py-1">Início</a>
+                <a href="{% url 'sobre' %}" class="hover:text-indigo-200 transition py-1">Sobre</a>
+                <a href="{% url 'listar_alunos' %}" class="bg-indigo-700 hover:bg-indigo-800 px-3 py-1 rounded-lg transition">
+                    Alunos
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm">
+            <p>&copy; {% now "Y" %} Universidade. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
