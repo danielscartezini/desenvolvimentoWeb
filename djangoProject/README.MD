@@ -1,8 +1,8 @@
 # Preparando o Ambiente
 python -m venv venv
-* Windows *
+**Windows**
 venv\Scripts\activate
-* Linux/macOS *
+**Linux/macOS**
 source venv/bin/activate
 pip install django
 django-admin --version
